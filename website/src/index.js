@@ -2,9 +2,25 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./css/utilities.css";
 import "./css/style.css";
+import wheel from "./images/wheel.gif";
+
+const App = () => {
+  window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden";
+  });
+  return <div>Hi there! </div>;
+};
+
+ReactDOM.render(<App />, document.querySelector("#root"));
 
 ReactDOM.render(
   <body>
+    <div className="loader">
+      <img src={wheel} alt="Loading ..." />
+      <span>Loading...</span>
+    </div>
+
     <header className="hero">
       <div id="navbar" className="navbar top">
         <h1 className="logo">
@@ -32,7 +48,7 @@ ReactDOM.render(
       </div>
 
       <div className="content">
-        <h1>Engineering for Performance Excellence </h1>
+        <h1>Mobile Performance Engineering Excellence </h1>
         <p>We provide world class automotive performance </p>
         <a href="#about" className="btn">
           <i class="fas fa-chevron-right"></i> Read More
